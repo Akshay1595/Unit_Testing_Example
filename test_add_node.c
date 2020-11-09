@@ -9,7 +9,35 @@ void test_for_addNode_with_Fifo_pointer_setToNULL(void) {
     TEST_ASSERT_EQUAL(FAILURE,add_node(10,NULL));
 }
 
+void test_for_add_node_should_fail_for_fullfifo_when_rolled_over(void) {
+    fifo *my_fifo = init_fifo(3);
+
+    /* Fill fifo with all nodes */
+    TEST_ASSERT_EQUAL(SUCCESS,add_node(1,my_fifo));
+    TEST_ASSERT_EQUAL(SUCCESS,add_node(2,my_fifo));
+    TEST_ASSERT_EQUAL(SUCCESS,add_node(3,my_fifo));
+
+    /* Delete one node */
+    TEST_ASSERT_EQUAL(SUCCESS,del_node(my_fifo));
+
+    /* Fill again and make it full */
+    TEST_ASSERT_EQUAL(SUCCESS,add_node(4,my_fifo));
+
+    /* Adding should fail */
+    TEST_ASSERT_EQUAL(FAILURE,add_node(5,my_fifo));
+    TEST_ASSERT_EQUAL(FAILURE,add_node(6,my_fifo));
+}
+
 void test_for_addNode_should_fail_for_Fullfifo(void) {
+    fifo *my_fifo = init_fifo(3);
+    TEST_ASSERT_EQUAL(SUCCESS,add_node(1,my_fifo));
+    TEST_ASSERT_EQUAL(SUCCESS,add_node(2,my_fifo));
+    TEST_ASSERT_EQUAL(SUCCESS,add_node(3,my_fifo));
+    TEST_ASSERT_EQUAL(FAILURE,add_node(4,my_fifo));
+    TEST_ASSERT_EQUAL(FAILURE,add_node(5,my_fifo));
+}
+
+void test_for_addNode_should_fail_for_Fullfifo_when_no_of_elements_1(void) {
     fifo* my_fifo = init_fifo(1);
     TEST_ASSERT_EQUAL(SUCCESS,add_node(1,my_fifo));
     TEST_ASSERT_EQUAL(FAILURE,add_node(2,my_fifo));
@@ -49,6 +77,9 @@ void test_addNode_for_rollOver_of_rear(void) {
 void tests_for_addNode(void) {
     RUN_TEST(test_for_addNode_with_Fifo_pointer_setToNULL);
     RUN_TEST(test_for_addNode_should_fail_for_Fullfifo);
+    RUN_TEST(test_for_addNode_should_add_Values_as_Passed);
+    RUN_TEST(test_for_add_node_should_fail_for_fullfifo_when_rolled_over);
+    RUN_TEST(test_for_addNode_should_fail_for_Fullfifo_when_no_of_elements_1);
     RUN_TEST(test_for_addNode_should_add_Values_as_Passed);
     RUN_TEST(test_addNode_for_rollOver_of_rear);
 }
