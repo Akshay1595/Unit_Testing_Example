@@ -1,0 +1,21 @@
+
+test.c:43:test_init_of_front_and_rear_when_fifo_is_empty:PASS
+test.c:44:test_if_initFails_when_numOfElements_setTo0:PASS
+test.c:45:test_if_initSuccess_when_numOfElements_setToValidValue:PASS
+test.c:46:test_initFifo_values_for_arrayElements_set_to_zero:PASS
+test.c:47:test_initFifo_for_number_of_elements:PASS
+test.c:78:test_for_addNode_with_Fifo_pointer_setToNULL:PASS
+test.c:79:test_for_addNode_should_fail_for_Fullfifo:PASS
+test.c:80:test_for_addNode_should_add_Values_as_Passed:PASS
+test.c:81:test_for_add_node_should_fail_for_fullfifo_when_rolled_over:PASS
+test.c:82:test_for_addNode_should_fail_for_Fullfifo_when_no_of_elements_1:PASS
+test.c:83:test_for_addNode_should_add_Values_as_Passed:PASS
+test.c:84:test_addNode_for_rollOver_of_rear:PASS
+test.c:109:test_for_delNode_with_Fifo_pointer_setToNULL:PASS
+test.c:110:test_for_delNode_should_fail_for_emptyfifo:PASS
+test.c:111:test_delNode_when_only_one_element_left:PASS
+test.c:112:test_for_delNode_should_del_Values_with_FirstInFirstOut:PASS
+test.c:113:test_delNode_for_rollOver_of_front:PASS
+-----------------------
+17 Tests 0 Failures 0 Ignored
+OK
