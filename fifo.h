@@ -61,11 +61,13 @@ status check_if_full(fifo* my_fifo);
  */
 status check_if_empty(fifo* my_fifo);
 
+#if 0
 /**
  * @brief This function Check if Fifo is empty
  * @param my_fifo address of fifo of which data has to be printed
  * @return None
  */
 void print_node(fifo* my_fifo);
+#endif // 0
 
 #endif

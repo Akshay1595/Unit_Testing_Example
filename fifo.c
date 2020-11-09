@@ -95,7 +95,7 @@ status check_if_empty(fifo* my_fifo) {
         return FAILURE;
 }
 
-#ifdef UNIT_TEST
+#if 0
 void print_node(fifo* my_fifo) {
     if (check_if_empty(my_fifo) == SUCCESS) {
         printf("FIFO empty!\n");
