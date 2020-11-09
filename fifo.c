@@ -95,6 +95,7 @@ status check_if_empty(fifo* my_fifo) {
         return FAILURE;
 }
 
+#ifndef UNIT_TEST
 void print_node(fifo* my_fifo) {
     if (check_if_empty(my_fifo) == SUCCESS) {
         printf("FIFO empty!\n");
@@ -112,3 +113,4 @@ void print_node(fifo* my_fifo) {
     printf("-|%d|-\n",my_fifo->array_base_address[start_index]);
     return;
 }
+#endif
